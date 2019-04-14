@@ -22,11 +22,13 @@ public class EventsActivity extends AppCompatActivity {
         eventList = (ListView) findViewById(R.id.eventList);
 
         ArrayList<Event> evList = new ArrayList<>();
-        evList.add(new Event("@drawable/hehe", "Bartłomiej Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("@drawable/hehe", "Bartłomiej Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("@drawable/hehe", "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
 
-        CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_event_listview, evList);
+        CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_events, evList);
         eventList.setAdapter(adapter);
     }
 }

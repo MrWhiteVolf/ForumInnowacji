@@ -56,14 +56,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         locations.put(new LatLng(50.012250, 20.986645), "b");
         locations.put(new LatLng(50.012986, 20.987455), "c");
         locations.put(new LatLng(50.013342, 20.990255), "d");
+        locations.put(new LatLng(49.999694, 20.997938), "ppitok");
 
-        if (mode == "Main") {
+        if (mode.equals("Main")) {
             for (Map.Entry<LatLng, String> entry : locations.entrySet()) {
                 mMap.addMarker(new MarkerOptions().position(entry.getKey()).title(entry.getValue()));
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getKey(), 17), 1500, null);
             }
-        } else if(mode == "Single"){
-            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title(locations.get("latitude, longitude")));
+        } else if(mode.equals("Single")){
+            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Cycory"));
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 17), 1500, null);
         }
     }

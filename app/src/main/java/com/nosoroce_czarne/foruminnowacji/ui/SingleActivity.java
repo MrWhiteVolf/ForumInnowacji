@@ -52,6 +52,7 @@ public class  SingleActivity extends AppCompatActivity {
         final Intent intentEvent = new Intent(this, MapActivity.class);
         intentEvent.putExtra("latitude",place.getX());
         intentEvent.putExtra("longitude",place.getY());
+        intentEvent.putExtra("mainMode","Single");
         startActivity(intentEvent);
     }
 }

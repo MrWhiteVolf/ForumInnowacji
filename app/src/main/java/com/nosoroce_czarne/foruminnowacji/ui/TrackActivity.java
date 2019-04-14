@@ -34,7 +34,7 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
     }
 
     protected void redirect() {
-        startActivity(new JakDojadeAPI().getTrack("ppitok", location));
+        startActivity(new JakDojadeAPI().getTrack("dupa", location));
     }
 
     @Override
@@ -45,6 +45,7 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
         if(redirect) {
             redirect();
             redirect = !redirect;
+            finish();
         }
     }
 

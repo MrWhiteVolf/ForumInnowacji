@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         event.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                intentEvent.putExtra("mainMode","Main");
                 startActivity(intentEvent);
             }
         });

@@ -1,5 +1,6 @@
 package com.nosoroce_czarne.foruminnowacji;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -20,7 +21,7 @@ import java.util.Map;
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    HashMap<LatLng, String> locations = new HashMap<LatLng, String>();
+    static HashMap<LatLng, String> locations = new HashMap<LatLng, String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +47,25 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        Intent intent = getIntent();
+        String mode = intent.getStringExtra("mainMode");
+        Double latitude = intent.getDoubleExtra("latitude", 1.0);
+        Double longitude = intent.getDoubleExtra("longitude", 1.0);
         // Add a marker in Sydney and move the camera
         locations.put(new LatLng(50.012922, 20.986707), "a");
         locations.put(new LatLng(50.012250, 20.986645), "b");
         locations.put(new LatLng(50.012986, 20.987455), "c");
         locations.put(new LatLng(50.013342, 20.990255), "d");
 
-        for (Map.Entry<LatLng, String>entry : locations.entrySet()) {
-        mMap.addMarker(new MarkerOptions().position(entry.getKey()).title(entry.getValue()));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getKey(),17), 1500 , null);
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(entry.getKey()));
+        if (mode == "Main") {
+            for (Map.Entry<LatLng, String> entry : locations.entrySet()) {
+                mMap.addMarker(new MarkerOptions().position(entry.getKey()).title(entry.getValue()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getKey(), 17), 1500, null);
+            }
+        } else if(mode == "Single"){
+            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title(locations.get("latitude, longitude")));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 17), 1500, null);
         }
     }
 }
+

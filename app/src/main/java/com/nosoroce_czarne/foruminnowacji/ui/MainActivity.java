@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button events;
     private Button event;
     private Button places;
+    private Button single;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
         events = (Button) findViewById(R.id.events);
         event = (Button) findViewById(R.id.event);
         places = (Button) findViewById(R.id.places);
+        single = (Button) findViewById(R.id.single);
+
         final Intent intentEvents = new Intent(this, EventsActivity.class);
         final Intent intentEvent = new Intent(this, MapActivity.class);
         final Intent intentPlaces = new Intent(this, PlacesActivity.class);
+        final Intent intentSingle = new Intent(this, SingleActivity.class);
 
         events.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -42,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(intentPlaces);
+                finish();
+            }
+        });
+
+        single.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(intentSingle);
                 finish();
             }
         });

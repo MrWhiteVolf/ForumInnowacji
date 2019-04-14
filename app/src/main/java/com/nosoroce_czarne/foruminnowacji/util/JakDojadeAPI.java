@@ -1,6 +1,5 @@
-package com.nosoroce_czarne.foruminnowacji;
+package com.nosoroce_czarne.foruminnowacji.util;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.location.Location;
 import android.net.Uri;
@@ -8,10 +7,9 @@ import android.util.Log;
 
 
 import com.google.android.gms.maps.model.LatLng;
-import com.nosoroce_czarne.foruminnowacji.ui.MainActivity;
+import com.nosoroce_czarne.foruminnowacji.mockDB.PlaceDB;
+import com.nosoroce_czarne.foruminnowacji.model.Place;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,9 +27,11 @@ public class JakDojadeAPI {
         String formattedDate = simpleDateFormat.format(date);
         String formattedTime = simpleTimeFormat.format(date);
 
-        LatLng placeLocation = new LocationsDB().getLocations().get(placeID);
 
-        String urlString = "https://jakdojade.pl/tarnow/trasa/z--undefined--do--undefined?tc="+location.getLatitude()+":"+location.getLongitude()+"&fc="+placeLocation.latitude+":"+placeLocation.longitude+"&ft=LOCATION_TYPE_COORDINATE&tt=LOCATION_TYPE_COORDINATE&d="+formattedDate+"&h="+formattedTime+"&aro=1&t=1&rc=3&ri=1&r=0";
+  //      LatLng placeLocation = new LocationsDB().getLocations().get(placeID);
+
+        Place placeLocation = new PlaceDB().getPlaceByName(placeID);
+        String urlString = "https://jakdojade.pl/tarnow/trasa/z--undefined--do--undefined?tc="+location.getLatitude()+":"+location.getLongitude()+"&fc="+placeLocation.getLatitude()+":"+placeLocation.getLongitude()+"&ft=LOCATION_TYPE_COORDINATE&tt=LOCATION_TYPE_COORDINATE&d="+formattedDate+"&h="+formattedTime+"&aro=1&t=1&rc=3&ri=1&r=0";
         Log.d("URL", urlString);
 
         Intent httpIntent = new Intent(Intent.ACTION_VIEW);

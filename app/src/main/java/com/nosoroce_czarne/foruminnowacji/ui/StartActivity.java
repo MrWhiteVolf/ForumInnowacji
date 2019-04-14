@@ -13,7 +13,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         /**
-         * Start activity opening and timing
+         * Start Event opening and timing
          */
         final Intent intent = new Intent(this, MainActivity.class);
 

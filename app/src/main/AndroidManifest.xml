@@ -23,6 +23,8 @@
             android:parentActivityName=".ui.MainActivity"/>
         <activity android:name=".ui.EventsActivity"
             android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.TrackActivity"
+            android:parentActivityName=".ui.MainActivity"/>
         <activity android:name=".ui.MainActivity" />
         <activity
             android:name=".ui.StartActivity"

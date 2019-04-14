@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         single.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr.jpg", "ul. Mickiewicza 4", 50.0158, 20.9875));
+                intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr", "ul. Mickiewicza 4", 50.0158, 20.9875));
                 startActivity(intentSingle);
             }
         });

@@ -21,7 +21,7 @@ import java.util.Map;
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    static HashMap<LatLng, String> locations = new HashMap<LatLng, String>();
+    static HashMap<String, LatLng> locations = new HashMap<String, LatLng>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +52,16 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         Double latitude = intent.getDoubleExtra("latitude", 1.0);
         Double longitude = intent.getDoubleExtra("longitude", 1.0);
         // Add a marker in Sydney and move the camera
-        locations.put(new LatLng(50.012922, 20.986707), "a");
-        locations.put(new LatLng(50.012250, 20.986645), "b");
-        locations.put(new LatLng(50.012986, 20.987455), "c");
-        locations.put(new LatLng(50.013342, 20.990255), "d");
-        locations.put(new LatLng(49.999694, 20.997938), "ppitok");
+        locations.put("cycorlewy", new LatLng(50.012922, 20.986707));
+        locations.put("cycorprawy", new LatLng(50.012250, 20.986645));
+        locations.put("pitoklewy", new LatLng(50.012986, 20.987455));
+        locations.put("pitokprawy", new LatLng(50.013342, 20.990255));
+        locations.put("dupa", new LatLng(49.999694, 20.997938));
 
         if (mode.equals("Main")) {
-            for (Map.Entry<LatLng, String> entry : locations.entrySet()) {
-                mMap.addMarker(new MarkerOptions().position(entry.getKey()).title(entry.getValue()));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getKey(), 17), 1500, null);
+            for (Map.Entry<String, LatLng> entry : locations.entrySet()) {
+                mMap.addMarker(new MarkerOptions().position(entry.getValue()).title(entry.getKey()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getValue(), 17), 1500, null);
             }
         } else if(mode.equals("Single")){
             mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Cycory"));

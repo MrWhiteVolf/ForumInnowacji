@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         event = (Button) findViewById(R.id.event);
         places = (Button) findViewById(R.id.places);
         final Intent intentEvents = new Intent(this, EventsActivity.class);
-        final Intent intentEvent = new Intent(this, SingleActivity.class);
+        final Intent intentEvent = new Intent(this, MapActivity.class);
         final Intent intentPlaces = new Intent(this, PlacesActivity.class);
 
         events.setOnClickListener(new View.OnClickListener() {
@@ -31,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 finish();            }
         });
 
-        events.setOnClickListener(new View.OnClickListener() {
+        event.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(intentEvent);
                 finish();
             }
         });
 
-        events.setOnClickListener(new View.OnClickListener() {
+        places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(intentPlaces);
                 finish();

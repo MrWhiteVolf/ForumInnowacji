@@ -1,6 +1,5 @@
 package com.nosoroce_czarne.foruminnowacji;
 
-
 import android.app.Activity;
 import android.location.Location;
 
@@ -33,6 +32,7 @@ public class JakDojadeAPI {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             res = conn.getResponseMessage();
+            System.out.println(res);
         }catch (Exception e){
             System.out.println("JakDojadeAPI(getTrack): "+ e.getMessage());
         }

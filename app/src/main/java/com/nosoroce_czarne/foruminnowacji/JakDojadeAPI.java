@@ -7,6 +7,9 @@ import android.net.Uri;
 import android.util.Log;
 
 
+import com.google.android.gms.maps.model.LatLng;
+import com.nosoroce_czarne.foruminnowacji.ui.MainActivity;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -14,7 +17,7 @@ import java.util.Date;
 
 public class JakDojadeAPI {
 
-    public Intent getTrack(Integer placeID, Location location){
+    public Intent getTrack(String placeID, Location location){
 
         Date date = new Date();
 
@@ -25,6 +28,8 @@ public class JakDojadeAPI {
         SimpleDateFormat simpleTimeFormat = new SimpleDateFormat(patternTime);
         String formattedDate = simpleDateFormat.format(date);
         String formattedTime = simpleTimeFormat.format(date);
+
+        LatLng placeLocation = MapActivity.locations.get(placeID);
 
         URL url = null;
         HttpURLConnection conn = null;

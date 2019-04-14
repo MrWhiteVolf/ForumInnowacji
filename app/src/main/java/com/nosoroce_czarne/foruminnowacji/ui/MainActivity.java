@@ -20,15 +20,14 @@ import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
 import com.nosoroce_czarne.foruminnowacji.model.Place;
 
-public class MainActivity extends AppCompatActivity implements LocationListener {
+public class MainActivity extends AppCompatActivity {
     private Button events;
     private Button event;
     private Button places;
     private Button single;
     private String wyjebany = "Teatr im. Ludwika Solskiego w Tarnowie – samorządowa instytucja kultury m. Tarnowa, teatr dramatyczny działający od 1945 w budynku byłego Polskiego Towarzystwa Gimnastycznego „Sokół”";
-    protected LocationManager locationManager;
-    protected LocationListener locationListener;
-    private Location location = new Location("");
+
+
 
 
     @Override
@@ -40,23 +39,12 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         places = (Button) findViewById(R.id.places);
         single = (Button) findViewById(R.id.single);
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
         final Intent intentEvents = new Intent(this, EventsActivity.class);
         final Intent intentEvent = new Intent(this, MapActivity.class);
         final Intent intentPlaces = new Intent(this, PlacesActivity.class);
         final Intent intentSingle = new Intent(this, SingleActivity.class);
+        final Intent intentTrack = new Intent(this, TrackActivity.class);
 
         events.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -73,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new JakDojadeAPI().getTrack(1, location));
+                startActivity(intentTrack);
             }
         });
 
@@ -85,24 +73,4 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         });
     }
 
-    @Override
-    public void onLocationChanged(Location _location) {
-        this.location.setLongitude(_location.getLongitude());
-        this.location.setLatitude(_location.getLatitude());
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-        Log.d("Latitude","disable");
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-        Log.d("Latitude","enable");
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        Log.d("Latitude","status");
-    }
 }

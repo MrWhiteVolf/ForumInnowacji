@@ -1,6 +1,9 @@
 package com.nosoroce_czarne.foruminnowacji.model;
 
-public class Place {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Place implements Parcelable {
     private String name;
     private String desc;
     private String foto;
@@ -63,5 +66,47 @@ public class Place {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * Przesyłanie obiektu miedzy intentami
+     * @param parcel
+     * @param i
+     */
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(desc);
+        parcel.writeString(foto);
+        parcel.writeString(address);
+        parcel.writeDouble(x);
+        parcel.writeDouble(y);
+    }
+
+
+    // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
+    public static final Parcelable.Creator<Place> CREATOR = new Parcelable.Creator<Place>() {
+        public Place createFromParcel(Parcel in) {
+            return new Place(in);
+        }
+
+        public Place[] newArray(int size) {
+            return new Place[size];
+        }
+    };
+
+    // example constructor that takes a Parcel and gives you an object populated with it's values
+    private Place(Parcel in) {
+        name = in.readString();
+        desc = in.readString();
+        foto = in.readString();
+        address = in.readString();
+        x = in.readDouble();
+        y = in.readDouble();
     }
 }

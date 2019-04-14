@@ -10,12 +10,15 @@ import android.widget.Button;
 import com.nosoroce_czarne.foruminnowacji.JakDojadeAPI;
 import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
+import com.nosoroce_czarne.foruminnowacji.model.Place;
 
 public class MainActivity extends AppCompatActivity {
     private Button events;
     private Button event;
     private Button places;
     private Button single;
+    private String wyjebany = "Teatr im. Ludwika Solskiego w Tarnowie – samorządowa instytucja kultury m. Tarnowa, teatr dramatyczny działający od 1945 w budynku byłego Polskiego Towarzystwa Gimnastycznego „Sokół”";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +50,15 @@ public class MainActivity extends AppCompatActivity {
 
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new JakDojadeAPI().getTrack(1, MainActivity.this));
-                finish();
+                JakDojadeAPI.getTrack(1, MainActivity.this);
+                startActivity(intentPlaces);
+            }
+        });
+
+        single.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr.jpg", "ul. Mickiewicza 4", 50.0158, 20.9875));
+                startActivity(intentSingle);
             }
         });
     }

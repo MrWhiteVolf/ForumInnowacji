@@ -33,11 +33,11 @@
                 android:layout_gravity="center_vertical"
                 android:padding="10sp">
                 <TextView
+                    android:id="@+id/single_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAllCaps="true"
                     android:textSize="25sp"
-                    android:text="teatr im. ludwika solskiego"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
             </LinearLayout>
             <ScrollView
@@ -70,7 +70,7 @@
 
                     </LinearLayout>
                     <TextView
-                        android:id="@+id/single_opis"
+                        android:id="@+id/single_desc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
@@ -105,10 +105,11 @@
                         android:orientation="horizontal"
                         android:padding="10sp">
                         <TextView
+                            android:id="@+id/single_add"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAllCaps="true"
-                            android:text="ul. Mickiewicza 4"
+                            android:text="ul. M"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                             android:layout_weight="1"
                             android:textSize="15sp"/>

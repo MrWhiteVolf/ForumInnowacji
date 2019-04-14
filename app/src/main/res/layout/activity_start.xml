@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/StartTheme"
-    tools:context="com.nosoroce_czarne.foruminnowacji.StartActivity">
+    tools:context="com.nosoroce_czarne.foruminnowacji.ui.StartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

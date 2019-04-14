@@ -1,8 +1,10 @@
-package com.nosoroce_czarne.foruminnowacji;
+package com.nosoroce_czarne.foruminnowacji.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.nosoroce_czarne.foruminnowacji.R;
 
 public class StartActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.nosoroce_czarne.foruminnowacji.R;
 
-public class SingleActivity extends AppCompatActivity {
+public class  SingleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

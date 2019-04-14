@@ -14,12 +14,7 @@ import java.util.Date;
 
 public class JakDojadeAPI {
 
-    public Intent getTrack(Integer placeID, Activity activity){
-
-        Location location = GPSTracker.getLocation(activity);
-
-        //get place Location (longitude, latitude)
-        //Location placeLocation =
+    public Intent getTrack(Integer placeID, Location location){
 
         Date date = new Date();
 

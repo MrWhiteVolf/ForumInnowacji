@@ -24,6 +24,10 @@ public class  SingleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final Intent intentEvent = new Intent(this, MapActivity.class);
+        intentEvent.putExtra("latitude",50.012922);
+        intentEvent.putExtra("longitude",20.986707);
+        startActivity(intentEvent);
 
         tvName = (TextView) findViewById(R.id.single_name);
         tvDesc = (TextView) findViewById(R.id.single_desc);

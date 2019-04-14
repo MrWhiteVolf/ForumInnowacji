@@ -17,6 +17,8 @@ public class GPSTracker{
         Task<Location> location;
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
         location = fusedLocationProviderClient.getLastLocation();
+
+        //Location askForLocation = location.
         return location.getResult();
     }
 

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.nosoroce_czarne.foruminnowacji.JakDojadeAPI;
 import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                JakDojadeAPI.getTrack(1, MainActivity.this);
                 startActivity(intentPlaces);
                 finish();
             }

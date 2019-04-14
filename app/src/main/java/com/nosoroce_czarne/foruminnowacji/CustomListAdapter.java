@@ -59,14 +59,14 @@ public class CustomListAdapter  extends ArrayAdapter<Event> {
     {
         setupImageLoader();
     //get the persons information
-    //String eventTitleString = getItem(position).getEventTitle();
-    //String eventTimeString = getItem(position).getEventTime();
-    //String eventPlaceString = getItem(position).getEventPlace();
-    //String imageUrl = getItem(position).getEventImageURL();
-    String eventTitleString = "DUPA";
-    String eventPlaceString = "DUPA";
-    String eventTimeString = "DUPA";
-    String imageUrl = "@drawable/hehe";
+    String eventTitleString = getItem(position).getEventTitle();
+    String eventTimeString = getItem(position).getEventTime();
+    String eventPlaceString = getItem(position).getEventPlace();
+    String imageUrl = getItem(position).getEventImageURL();
+    //String eventTitleString = "DUPA";
+    //String eventPlaceString = "DUPA";
+    //String eventTimeString = "DUPA";
+    //String imageUrl = "@drawable/hehe";
         try{
         //create the view result for showing the animation
         final View result;

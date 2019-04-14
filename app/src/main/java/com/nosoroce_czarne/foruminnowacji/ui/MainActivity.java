@@ -40,19 +40,14 @@ public class MainActivity extends AppCompatActivity {
         event.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(intentEvent);
+                finish();
             }
         });
 
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                JakDojadeAPI.getTrack(1, MainActivity.this);
-                startActivity(intentPlaces);
-            }
-        });
-
-        single.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intentSingle);
+                startActivity(new JakDojadeAPI().getTrack(1, MainActivity.this));
+                finish();
             }
         });
     }

@@ -105,10 +105,13 @@
                     android:layout_weight="1"
                     android:textSize="15sp"/>
                 <ImageView
+                    android:id="@+id/localize"
                     android:layout_width="20sp"
                     android:layout_height="20sp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:onClick="startMap"
+                    android:clickable="true"
                     android:src="@drawable/baseline_map_black_18dp"/>
             </LinearLayout>
 

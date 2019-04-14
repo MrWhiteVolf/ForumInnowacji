@@ -1,11 +1,16 @@
 package com.nosoroce_czarne.foruminnowacji.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
+import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
 
 public class  SingleActivity extends AppCompatActivity {
+    private ImageView localizeImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,5 +18,12 @@ public class  SingleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single);
         getSupportActionBar().setTitle("Teatr");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        localizeImageView = (ImageView) findViewById(R.id.localize);
+    }
+
+    public void startMap(View view){
+        //TODO dodanie putExtra
+        final Intent intentEvent = new Intent(this, MapActivity.class);
     }
 }

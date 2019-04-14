@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         places.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                JakDojadeAPI.getTrack(1, MainActivity.this);
-                startActivity(intentPlaces);
+                startActivity(new JakDojadeAPI().getTrack(1, MainActivity.this));
+                //1startActivity(intentPlaces);
             }
         });
 

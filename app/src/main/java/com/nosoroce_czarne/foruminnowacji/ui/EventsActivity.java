@@ -1,12 +1,11 @@
 package com.nosoroce_czarne.foruminnowacji.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.nosoroce_czarne.foruminnowacji.CustomListAdapter;
-import com.nosoroce_czarne.foruminnowacji.Event;
+import com.nosoroce_czarne.foruminnowacji.util.CustomListAdapter;
+import com.nosoroce_czarne.foruminnowacji.model.Event;
 import com.nosoroce_czarne.foruminnowacji.R;
 
 import java.util.ArrayList;

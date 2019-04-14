@@ -1,21 +1,20 @@
-package com.nosoroce_czarne.foruminnowacji;
+package com.nosoroce_czarne.foruminnowacji.ui;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.nosoroce_czarne.foruminnowacji.mockDB.PlaceDB;
+import com.nosoroce_czarne.foruminnowacji.model.Place;
+import com.nosoroce_czarne.foruminnowacji.util.LocationsDB;
+import com.nosoroce_czarne.foruminnowacji.R;
 
-import org.w3c.dom.Entity;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -53,9 +52,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         // Add a marker in Sydney and move the camera
 
         if (mode.equals("Main")) {
-            for (Map.Entry<String, LatLng> entry : new LocationsDB().getLocations().entrySet()) {
-                mMap.addMarker(new MarkerOptions().position(entry.getValue()).title(entry.getKey()));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getValue(), 17), 1500, null);
+            for (Place entry : new PlaceDB().getPlaces()) {
+                LatLng latLng = new LatLng(entry.getLatitude(), entry.getLongitude());
+                mMap.addMarker(new MarkerOptions().position(latLng).title(entry.getName()));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17), 1500, null);
             }
         } else if(mode.equals("Single")){
             mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Cycory"));

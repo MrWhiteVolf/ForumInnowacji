@@ -1,4 +1,4 @@
-package com.nosoroce_czarne.foruminnowacji;
+package com.nosoroce_czarne.foruminnowacji.util;
 
 import com.google.android.gms.maps.model.LatLng;
 

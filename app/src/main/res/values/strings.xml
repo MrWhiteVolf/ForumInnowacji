@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ForumInnowacji</string>
-    <string name="title_activity_map">Map</string>
+    <string name="button_events">Wydarzenia</string>
+    <string name="button_event">Wydarzenie</string>
+    <string name="button_places">Miejsca</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>

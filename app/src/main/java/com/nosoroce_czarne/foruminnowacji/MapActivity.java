@@ -3,6 +3,7 @@ package com.nosoroce_czarne.foruminnowacji;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -10,9 +11,16 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.w3c.dom.Entity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    HashMap<LatLng, String> locations = new HashMap<LatLng, String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +47,15 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        locations.put(new LatLng(50.012922, 20.986707), "a");
+        locations.put(new LatLng(50.012250, 20.986645), "b");
+        locations.put(new LatLng(50.012986, 20.987455), "c");
+        locations.put(new LatLng(50.013342, 20.990255), "d");
+
+        for (Map.Entry<LatLng, String>entry : locations.entrySet()) {
+        mMap.addMarker(new MarkerOptions().position(entry.getKey()).title(entry.getValue()));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(entry.getKey(),17), 1500 , null);
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(entry.getKey()));
+        }
     }
 }

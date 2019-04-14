@@ -16,20 +16,9 @@ public class GPSTracker{
 
     @SuppressLint("MissingPermission")
     public static Location getLocation(Activity activity){
-        Task<Location> locationTask;
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
-        locationTask = fusedLocationProviderClient.getLastLocation();
 
-        locationTask.addOnSuccessListener(activity,new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if(location!=null) {
-                    //Write your implemenation here
-                    Log.d("Log",location.getLatitude()+" "+location.getLongitude());      }
-            }
-        });
 
-        //return locationTask.getResult();
+
 
         Location l = new Location("");
         l.setLatitude(50.0155713);
@@ -38,3 +27,17 @@ public class GPSTracker{
     }
 
 }
+
+
+//        Task<Location> locationTask;
+//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
+//        locationTask = fusedLocationProviderClient.getLastLocation();
+//
+//        locationTask.addOnSuccessListener(activity,new OnSuccessListener<Location>() {
+//            @Override
+//            public void onSuccess(Location location) {
+//                if(location!=null) {
+//                    //Write your implemenation here
+//                    Log.d("Log",location.getLatitude()+" "+location.getLongitude());      }
+//            }
+//        });

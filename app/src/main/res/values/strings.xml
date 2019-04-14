@@ -4,4 +4,7 @@
     <string name="button_event">Wydarzenie</string>
     <string name="button_places">Miejsca</string>
     <string name="title_activity_map">MapActivity</string>
+    <string name="single_info">Informacje</string>
+    <string name="single_road">Lokalizacja</string>
+    <string name="single_events">Wydarzenia</string>
 </resources>

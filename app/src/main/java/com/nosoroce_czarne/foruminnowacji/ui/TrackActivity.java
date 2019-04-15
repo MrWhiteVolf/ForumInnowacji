@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.nosoroce_czarne.foruminnowacji.R;
 import com.nosoroce_czarne.foruminnowacji.util.JakDojadeAPI;
 
 public class TrackActivity extends AppCompatActivity implements LocationListener {
@@ -22,6 +23,8 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
 
     @Override
     protected synchronized void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_track);
         super.onCreate(savedInstanceState);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

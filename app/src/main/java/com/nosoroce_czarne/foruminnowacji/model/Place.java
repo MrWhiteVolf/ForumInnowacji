@@ -12,7 +12,7 @@ public class Place implements Parcelable {
     private double longitude;
     private double latitude;
 
-    public Place(String ID,String name, String desc, String foto, String address, double longitude, double latitude) {
+    public Place(String ID,String name, String desc, String foto, String address, double latitude, double longitude) {
         this.ID = ID;
         this.name = name;
         this.desc = desc;

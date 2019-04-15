@@ -10,6 +10,7 @@ public class PlaceDB {
     static List<Place> places = new ArrayList<>();
 
     static {
+        places.add(new Place("ID0","Teatr im. Ludwika Solskiego w Tarnowie", "Teatr im. Ludwika Solskiego w Tarnowie – samorządowa instytucja kultury m. Tarnowa, teatr dramatyczny działający od 1945 w budynku byłego Polskiego Towarzystwa Gimnastycznego „Sokół”", "teatr", "ul. Mickiewicza 4", 50.0158, 20.9875));
         places.add(new Place("ID1","בימת בית הכנסת", "Żydowskie konstrukcje", "foto", "33-100, 42-600 Tarnów", 50.013340, 20.988942));
         places.add(new Place("ID2","Turystyczna Izba Pamięci", "Turystyczna Izba Pamięci", "foto", "Żydowska 20, 33-100 Tarnów", 50.013083, 20.990318));
         places.add(new Place("ID3","Muzeum Diecezjalne", "Muzeum Diecezjalne", "foto", "plac Katedralny 6, 33-100 Tarnów", 50.012912, 20.986726));

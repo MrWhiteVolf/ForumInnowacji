@@ -10,8 +10,6 @@ import android.widget.TextView;
 import android.view.LayoutInflater;
 import android.util.Log;
 
-import com.nosoroce_czarne.foruminnowacji.R;
-import com.nosoroce_czarne.foruminnowacji.model.Event;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;

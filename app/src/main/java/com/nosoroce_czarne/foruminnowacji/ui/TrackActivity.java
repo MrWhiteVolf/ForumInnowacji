@@ -25,7 +25,6 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
     protected synchronized void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track);
-        super.onCreate(savedInstanceState);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -49,7 +48,7 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
             redirect = !redirect;
             locationManager.removeUpdates(locationListener);
             locationManager = null;
-            finish();
+            //finish();
         }
     }
 

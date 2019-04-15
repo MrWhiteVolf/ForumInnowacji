@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private Button event;
     private Button places;
     private Button single;
-    private String wyjebany = "Teatr im. Ludwika Solskiego w Tarnowie – samorządowa instytucja kultury m. Tarnowa, teatr dramatyczny działający od 1945 w budynku byłego Polskiego Towarzystwa Gimnastycznego „Sokół”";
 
 
 
@@ -33,9 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentPlaces(View view){
-        /*final Intent intentPlaces = new Intent(this, PlacesActivity.class);
-        startActivity(intentPlaces);*/
         final Intent intentSingle = new Intent(this, SingleActivity.class);
+        //@TODO przekazac odpowiednie ID miejsca
         intentSingle.putExtra("Place", new PlaceDB().getPlaceByID("ID0"));
         startActivity(intentSingle);
     }

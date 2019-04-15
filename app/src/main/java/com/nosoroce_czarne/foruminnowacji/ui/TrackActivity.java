@@ -16,7 +16,6 @@ import com.nosoroce_czarne.foruminnowacji.util.JakDojadeAPI;
 
 public class TrackActivity extends AppCompatActivity implements LocationListener {
     protected LocationManager locationManager;
-    protected LocationListener locationListener;
     private Location location = new Location("");
     private Boolean redirect = true;
 
@@ -46,9 +45,9 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
         if(redirect) {
             redirect();
             redirect = !redirect;
-            locationManager.removeUpdates(locationListener);
+            locationManager.removeUpdates(this);
             locationManager = null;
-            //finish();
+            finish();
         }
     }
 

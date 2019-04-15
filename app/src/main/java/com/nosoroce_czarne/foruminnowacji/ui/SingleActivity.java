@@ -8,13 +8,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nosoroce_czarne.foruminnowacji.CustomListAdapter;
-import com.nosoroce_czarne.foruminnowacji.Event;
-import com.nosoroce_czarne.foruminnowacji.MapActivity;
 import com.nosoroce_czarne.foruminnowacji.R;
+import com.nosoroce_czarne.foruminnowacji.mockDB.EventDB;
+import com.nosoroce_czarne.foruminnowacji.model.Event;
 import com.nosoroce_czarne.foruminnowacji.model.Place;
+import com.nosoroce_czarne.foruminnowacji.util.CustomListAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class  SingleActivity extends AppCompatActivity {
     private ImageView localizeImageView;
@@ -33,12 +34,7 @@ public class  SingleActivity extends AppCompatActivity {
 
         eventList = (ListView) findViewById(R.id.eventList);
 
-        ArrayList<Event> evList = new ArrayList<>();
-        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomi22 Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
-        evList.add(new Event("drawable://" +R.drawable.hehe, "Bartłomiej Wnuk", "DUAP", "DUPA"));
+        List<Event> evList = EventDB.getEvents();
 
         CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_events, evList);
         eventList.setAdapter(adapter);

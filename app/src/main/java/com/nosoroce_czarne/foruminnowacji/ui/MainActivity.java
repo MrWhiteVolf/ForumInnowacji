@@ -23,43 +23,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        events = (Button) findViewById(R.id.events);
-        event = (Button) findViewById(R.id.event);
-        places = (Button) findViewById(R.id.places);
-        single = (Button) findViewById(R.id.single);
 
-
-        final Intent intentEvents = new Intent(this, EventsActivity.class);
-        final Intent intentEvent = new Intent(this, MapActivity.class);
-        final Intent intentPlaces = new Intent(this, PlacesActivity.class);
-        final Intent intentSingle = new Intent(this, SingleActivity.class);
-        final Intent intentTrack = new Intent(this, TrackActivity.class);
-
-        events.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intentEvents);
-            }
-        });
-
-        event.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                intentEvent.putExtra("mainMode","Main");
-                startActivity(intentEvent);
-            }
-        });
-
-        places.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(intentTrack);
-            }
-        });
-
-        single.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr", "ul. Mickiewicza 4", 50.0158, 20.9875));
-                startActivity(intentSingle);
-            }
-        });
     }
 
+    public void intentEvents(View view){
+        final Intent intentEvents = new Intent(this, EventsActivity.class);
+        startActivity(intentEvents);
+    }
+
+    public void intentPlaces(View view){
+        /*final Intent intentPlaces = new Intent(this, PlacesActivity.class);
+        startActivity(intentPlaces);*/
+        final Intent intentSingle = new Intent(this, SingleActivity.class);
+        intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr", "ul. Mickiewicza 4", 50.0158, 20.9875));
+        startActivity(intentSingle);
+    }
 }

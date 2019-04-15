@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.nosoroce_czarne.foruminnowacji.R;
+import com.nosoroce_czarne.foruminnowacji.mockDB.PlaceDB;
 import com.nosoroce_czarne.foruminnowacji.model.Place;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         /*final Intent intentPlaces = new Intent(this, PlacesActivity.class);
         startActivity(intentPlaces);*/
         final Intent intentSingle = new Intent(this, SingleActivity.class);
-        intentSingle.putExtra("Place", new Place("Teatr im. Ludwika Solskiego w Tarnowie", wyjebany, "teatr", "ul. Mickiewicza 4", 50.0158, 20.9875));
+        intentSingle.putExtra("Place", new PlaceDB().getPlaceByID("ID0"));
         startActivity(intentSingle);
     }
 }

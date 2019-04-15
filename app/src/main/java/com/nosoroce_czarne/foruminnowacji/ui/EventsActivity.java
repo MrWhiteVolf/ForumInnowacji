@@ -22,6 +22,7 @@ public class EventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_listview);
         eventList = (ListView) findViewById(R.id.eventList);
 
+        new EventDB();
         List<Event> evList = EventDB.getEvents();
 
         CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_events, evList);

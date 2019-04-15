@@ -56,7 +56,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 LatLng latLng = new LatLng(entry.getLongitude(), entry.getLatitude());
                 mMap.addMarker(new MarkerOptions().position(latLng).title(entry.getName()));
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17), 1500, null);
-            }
+                       }
         } else if(mode.equals("Single")){
             mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Cycory"));
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 17), 1500, null);

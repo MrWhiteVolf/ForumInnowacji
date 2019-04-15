@@ -134,7 +134,7 @@
                             android:layout_height="25sp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:onClick="startMap"
+                            android:onClick="startRoad"
                             android:clickable="true"
                             android:src="@drawable/baseline_map_black_18dp"/>
                     </LinearLayout>

@@ -59,11 +59,16 @@ public class  SingleActivity extends AppCompatActivity {
     }
 
     public void startMap(View view){
-        //TODO dodanie putExtra
         final Intent intentEvent = new Intent(this, MapActivity.class);
         intentEvent.putExtra("latitude",place.getLongitude());
         intentEvent.putExtra("longitude",place.getLatitude());
         intentEvent.putExtra("mainMode","Single");
         startActivity(intentEvent);
+    }
+
+    public void startRoad(View view){
+        //TODO putExtra
+        final Intent intentTrack = new Intent(this, TrackActivity.class);
+        startActivity(intentTrack);
     }
 }

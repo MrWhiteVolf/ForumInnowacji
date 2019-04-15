@@ -10,7 +10,7 @@ public class EventDB {
     private static List<Event> events = new ArrayList<>();
 
     static {
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "activity1itle", "activityPlace", "activityTime"));
         events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
         events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
         events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));

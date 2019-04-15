@@ -44,6 +44,8 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
         if(redirect) {
             redirect();
             redirect = !redirect;
+            locationManager.removeUpdates(locationListener);
+            locationManager = null;
             finish();
         }
     }

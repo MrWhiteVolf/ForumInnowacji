@@ -10,12 +10,12 @@ public class EventDB {
     private static List<Event> events = new ArrayList<>();
 
     static {
-        events.add(new Event("eventImageURL", "activity1itle", "activityPlace", "activityTime"));
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
-        events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "1111111", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "2222222", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "3333333", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "4444444", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "5555555", "activityPlace", "activityTime"));
+        events.add(new Event("eventImageURL", "666666", "activityPlace", "activityTime"));
         events.add(new Event("eventImageURL", "activityTitle", "activityPlace", "activityTime"));
     }
 

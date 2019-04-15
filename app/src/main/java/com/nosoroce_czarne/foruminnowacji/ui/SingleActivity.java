@@ -3,6 +3,7 @@ package com.nosoroce_czarne.foruminnowacji.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -32,12 +33,14 @@ public class  SingleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        eventList = (ListView) findViewById(R.id.eventList);
+        eventList = (ListView) findViewById(R.id.eventListSingle);
 
+        new EventDB();
         List<Event> evList = EventDB.getEvents();
+        for (Event e: evList){
+            Log.d("aaa", evList.size()+" :: " + e.getEventTitle());
 
-        CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_events, evList);
-        eventList.setAdapter(adapter);
+        }
 
         tvName = (TextView) findViewById(R.id.single_name);
         tvDesc = (TextView) findViewById(R.id.single_desc);
@@ -56,6 +59,9 @@ public class  SingleActivity extends AppCompatActivity {
         ivLogo.setImageResource(imageResource);
 
         localizeImageView = (ImageView) findViewById(R.id.localize);
+
+        CustomListAdapter adapter = new CustomListAdapter(this, R.layout.activity_events, evList);
+        eventList.setAdapter(adapter);
     }
 
     public void startMap(View view){

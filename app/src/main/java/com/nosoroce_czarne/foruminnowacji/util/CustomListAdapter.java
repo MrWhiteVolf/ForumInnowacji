@@ -29,8 +29,7 @@ public class CustomListAdapter  extends ArrayAdapter<Event> {
     private Context context;
     private int resource;
     private int lastPosition = -1;
-    private static class ViewHolder
-    {
+    private static class ViewHolder {
         ImageView imageURL;
         TextView eventTitle;
         TextView eventPlace;
@@ -51,11 +50,10 @@ public class CustomListAdapter  extends ArrayAdapter<Event> {
         this.context = context;
         this.resource = resource;
     }
+
     @NonNull
     @Override
-    public View getView (int position, View convertView, ViewGroup parent)
-    {
-        setupImageLoader();
+    public View getView (int position, View convertView, ViewGroup parent) {
     //get the persons information
     String eventTitleString = getItem(position).getEventTitle();
     String eventTimeString = getItem(position).getEventTime();
@@ -95,44 +93,17 @@ public class CustomListAdapter  extends ArrayAdapter<Event> {
         holder.eventTitle.setText(eventTitleString);
         holder.eventPlace.setText(eventPlaceString);
         holder.eventTime.setText(eventTimeString);
+        Log.d("AA: ", eventTitleString+"----");
 
-        //create the imageloader object
-        ImageLoader imageLoader = ImageLoader.getInstance();
+        int imageResource = context.getResources().getIdentifier(imageUrl, null, context.getPackageName());
+        holder.imageURL.setImageResource(imageResource);
 
-        int defaultImage = context.getResources().getIdentifier("@drawable/image_failed",null,context.getPackageName());
-
-        //create display options
-        DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
-                .cacheOnDisc(true).resetViewBeforeLoading(true)
-                .showImageForEmptyUri(defaultImage)
-                .showImageOnFail(defaultImage)
-                .showImageOnLoading(defaultImage).build();
-
-        //download and display image from url
-        imageLoader.displayImage(imageUrl, holder.imageURL, options);
+            //create the imageloader object
 
         return convertView;
-    }catch (IllegalArgumentException e){
-        Log.e(TAG, "getView: IllegalArgumentException: " + e.getMessage() );
-        return convertView;
-    }
-
-}
-
-    private void setupImageLoader(){
-        // UNIVERSAL IMAGE LOADER SETUP
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheOnDisc(true).cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .displayer(new FadeInBitmapDisplayer(300)).build();
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                context)
-                .defaultDisplayImageOptions(defaultOptions)
-                .memoryCache(new WeakMemoryCache())
-                .discCacheSize(100 * 1024 * 1024).build();
-
-        ImageLoader.getInstance().init(config);
-        // END - UNIVERSAL IMAGE LOADER SETUP
+    } catch (IllegalArgumentException e){
+            Log.e(TAG, "getView: IllegalArgumentException: " + e.getMessage() );
+            return convertView;
+        }
     }
 }

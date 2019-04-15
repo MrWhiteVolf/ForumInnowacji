@@ -154,7 +154,7 @@
                             android:textColor="@color/white"
                             android:text="@string/single_events"/>
                     </LinearLayout>
-                    <include android:id="@+id/eventListSingle" layout="@layout/activity_event_listview"/>
+                    <include android:id="@+id/eventListSingle" layout="@layout/listview_list"/>
                 </LinearLayout>
             </LinearLayout>
             </LinearLayout>

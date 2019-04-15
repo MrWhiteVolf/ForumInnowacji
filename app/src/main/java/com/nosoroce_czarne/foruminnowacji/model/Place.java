@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Place implements Parcelable {
+    private String ID;
     private String name;
     private String desc;
     private String foto;
@@ -11,7 +12,8 @@ public class Place implements Parcelable {
     private double longitude;
     private double latitude;
 
-    public Place(String name, String desc, String foto, String address, double longitude, double latitude) {
+    public Place(String ID,String name, String desc, String foto, String address, double longitude, double latitude) {
+        this.ID = ID;
         this.name = name;
         this.desc = desc;
         this.foto = foto;
@@ -68,6 +70,14 @@ public class Place implements Parcelable {
         this.address = address;
     }
 
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -80,6 +90,7 @@ public class Place implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(ID);
         parcel.writeString(name);
         parcel.writeString(desc);
         parcel.writeString(foto);
@@ -102,6 +113,7 @@ public class Place implements Parcelable {
 
     // example constructor that takes a Parcel and gives you an object populated with it's values
     private Place(Parcel in) {
+        ID = in.readString();
         name = in.readString();
         desc = in.readString();
         foto = in.readString();

@@ -33,7 +33,7 @@ public class TrackActivity extends AppCompatActivity implements LocationListener
     }
 
     protected void redirect() {
-        startActivity(new JakDojadeAPI().getTrack("dupa", location));
+        startActivity(new JakDojadeAPI().getTrack(getIntent().getStringExtra("ID"), location));
     }
 
     @Override

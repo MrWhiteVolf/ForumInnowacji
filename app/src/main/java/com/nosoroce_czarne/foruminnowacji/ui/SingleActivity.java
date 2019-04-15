@@ -69,6 +69,7 @@ public class  SingleActivity extends AppCompatActivity {
     public void startRoad(View view){
         //TODO putExtra
         final Intent intentTrack = new Intent(this, TrackActivity.class);
+        intentTrack.putExtra("ID", place.getID());
         startActivity(intentTrack);
     }
 }

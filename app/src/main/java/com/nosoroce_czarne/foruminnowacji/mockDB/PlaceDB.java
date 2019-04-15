@@ -10,23 +10,24 @@ public class PlaceDB {
     static List<Place> places = new ArrayList<>();
 
     static {
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-        places.add(new Place("name", "desc", "foto", "address", 50.0000, 20.0000));
-    }
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        places.add(new Place("ID1","name", "desc", "foto", "address", 50.0000, 20.0000));
+        }
 
     public static List<Place> getPlaces() {
         return places;
     }
 
-    public static Place getPlaceByName(String name){
+    public static Place getPlaceByID(String ID){
         for (Place place: places) {
-            if(place.getName().equals(name)){
+            if(place.getID().equals(ID)){
                 return place;
             }
         }

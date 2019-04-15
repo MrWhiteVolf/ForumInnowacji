@@ -1,9 +1,6 @@
 package com.nosoroce_czarne.foruminnowacji.ui;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -68,8 +65,8 @@ public class  SingleActivity extends AppCompatActivity {
     public void startMap(View view){
         //TODO dodanie putExtra
         final Intent intentEvent = new Intent(this, MapActivity.class);
-        intentEvent.putExtra("latitude",place.getX());
-        intentEvent.putExtra("longitude",place.getY());
+        intentEvent.putExtra("latitude",place.getLongitude());
+        intentEvent.putExtra("longitude",place.getLatitude());
         intentEvent.putExtra("mainMode","Single");
         startActivity(intentEvent);
     }

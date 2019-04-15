@@ -8,16 +8,16 @@ public class Place implements Parcelable {
     private String desc;
     private String foto;
     private String address;
-    private double x;
-    private double y;
+    private double longitude;
+    private double latitude;
 
-    public Place(String name, String desc, String foto, String address, double x, double y) {
+    public Place(String name, String desc, String foto, String address, double longitude, double latitude) {
         this.name = name;
         this.desc = desc;
         this.foto = foto;
         this.address = address;
-        this.x = x;
-        this.y = y;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
 
     public String getName() {
@@ -44,20 +44,20 @@ public class Place implements Parcelable {
         this.foto = foto;
     }
 
-    public double getX() {
-        return x;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
-    public double getY() {
-        return y;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setY(double y) {
-        this.y = y;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public String getAddress() {
@@ -84,8 +84,8 @@ public class Place implements Parcelable {
         parcel.writeString(desc);
         parcel.writeString(foto);
         parcel.writeString(address);
-        parcel.writeDouble(x);
-        parcel.writeDouble(y);
+        parcel.writeDouble(longitude);
+        parcel.writeDouble(latitude);
     }
 
 
@@ -106,7 +106,7 @@ public class Place implements Parcelable {
         desc = in.readString();
         foto = in.readString();
         address = in.readString();
-        x = in.readDouble();
-        y = in.readDouble();
+        longitude = in.readDouble();
+        latitude = in.readDouble();
     }
 }

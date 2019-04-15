@@ -1,4 +1,4 @@
-package com.nosoroce_czarne.foruminnowacji;
+package com.nosoroce_czarne.foruminnowacji.util;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,10 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.LayoutInflater;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.util.Log;
-
 
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -20,10 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class CustomListAdapter  extends ArrayAdapter<Event> {
@@ -64,10 +58,6 @@ public class CustomListAdapter  extends ArrayAdapter<Event> {
     String eventTimeString = getItem(position).getEventTime();
     String eventPlaceString = getItem(position).getEventPlace();
     String imageUrl = getItem(position).getEventImageURL();
-    //String eventTitleString = "DUPA";
-    //String eventPlaceString = "DUPA";
-    //String eventTimeString = "DUPA";
-    //String imageUrl = "@drawable/hehe";
         try{
         //create the view result for showing the animation
         final View result;
